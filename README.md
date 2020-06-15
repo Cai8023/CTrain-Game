@@ -28,7 +28,10 @@
 
 如何保证在自己的分支上呢？输入`git branch `，然后就可以看了
 
-* 上传代码 `git push 仓库名 分支名`，比如 git push gamerepo ck（上传前请切换到目标分支）
+* 上传代码 
+  1. `git add .`，添加所有修改过的文件到待提交区
+  2. `git commit -m "备注信息"`
+  3. `git push 仓库名 分支名`，比如 git push gamerepo ck（上传前请切换到目标分支）
 * 下载代码 `git pull 仓库名 分支名` ，比如 git pull gamerepo ck
 
 ==注意== 大家在对dev分支进行上传自己部分的代码前，都请一定先 pull 一次代码解决冲突
