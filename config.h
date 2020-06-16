@@ -6,7 +6,8 @@
 
 
 /**********  游戏配置数据 **********/
-#define GAME_ICON "://res/pic/tank.ico"      // 图标文件
+#define GAME_RES_PATH "./../game/tank.rcc"   // rcc路径
+#define GAME_ICON ":/res/pic/tank.ico"      // 图标文件
 #define GAME_WIDTH 600                      // 游戏窗口宽度
 #define GAME_HEIGHT 600                     // 游戏窗口高度
 
