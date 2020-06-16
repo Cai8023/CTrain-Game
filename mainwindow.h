@@ -3,7 +3,11 @@
 
 #include <QMainWindow>
 #include <QPixmap>
+<<<<<<< HEAD
 #include <QKeyEvent>
+=======
+#include <QPainter>
+>>>>>>> 2cc748bf9f3b19b34e7289fdffd6dda7dfa32f53
 
 class MainWindow : public QMainWindow
 {
@@ -17,10 +21,16 @@ public:
     void initGame();
     // 渲染
     void paintEvent(QPaintEvent *) override;
+<<<<<<< HEAD
 public:
     void keyPressEvent(QKeyEvent *event);
 
     void move();
+=======
+
+public:
+
+>>>>>>> 2cc748bf9f3b19b34e7289fdffd6dda7dfa32f53
 
 };
 

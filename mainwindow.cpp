@@ -26,7 +26,7 @@ void MainWindow::initGame()
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
-
+    //渲染
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
