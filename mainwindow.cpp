@@ -5,6 +5,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+    // 初始化游戏
     initGame();
 }
 
@@ -19,4 +20,9 @@ void MainWindow::initGame()
     setWindowIcon(QIcon(GAME_ICON));
     // 初始化窗口大小
     resize(GAME_WIDTH,GAME_HEIGHT);
+}
+
+void MainWindow::paintEvent(QPaintEvent *)
+{
+
 }
