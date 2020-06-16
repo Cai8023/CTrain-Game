@@ -20,13 +20,6 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-//public slots:
-//    void play();
-//    void enemyMove();
-//    void enemyShot();
-//    void bulletMove();
-//    void refresh();
-
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow() override;
