@@ -3,16 +3,13 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class MainWindow;
-}
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
     // 游戏初始化
@@ -21,8 +18,6 @@ public:
 public:
 
 
-private:
-    Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
