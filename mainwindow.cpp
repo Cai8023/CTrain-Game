@@ -16,4 +16,6 @@ void MainWindow::initGame()
 {
     // 加载图标
     setWindowIcon(QIcon(GAME_ICON));
+    // 初始化窗口大小
+    resize(1000,800);
 }

@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/pic">
+    <qresource prefix="/">
+        <file>res/data/map.dat</file>
         <file>res/pic/1P.gif</file>
         <file>res/pic/2P.gif</file>
         <file>res/pic/100.gif</file>
@@ -42,8 +43,6 @@
         <file>res/pic/wall.gif</file>
         <file>res/pic/white-number.gif</file>
         <file>res/pic/yellow-number.gif</file>
-    </qresource>
-    <qresource prefix="/pic/0Player">
         <file>res/pic/0Player/m0-0-1.gif</file>
         <file>res/pic/0Player/m0-0-2.gif</file>
         <file>res/pic/0Player/m0-1-1.gif</file>
@@ -76,8 +75,6 @@
         <file>res/pic/0Player/m3-2-2.gif</file>
         <file>res/pic/0Player/m3-3-1.gif</file>
         <file>res/pic/0Player/m3-3-2.gif</file>
-    </qresource>
-    <qresource prefix="/pic/blast">
         <file>res/pic/1Player/m0-0-1.gif</file>
         <file>res/pic/1Player/m0-0-2.gif</file>
         <file>res/pic/1Player/m0-1-1.gif</file>
@@ -115,8 +112,6 @@
         <file>res/pic/blast/2.gif</file>
         <file>res/pic/blast/3.gif</file>
         <file>res/pic/blast/4.gif</file>
-    </qresource>
-    <qresource prefix="/pic/grey-tank">
         <file>res/pic/gray-tank/1-1-1.gif</file>
         <file>res/pic/gray-tank/1-1-2.gif</file>
         <file>res/pic/gray-tank/1-2-1.gif</file>
@@ -149,8 +144,6 @@
         <file>res/pic/gray-tank/4-3-2.gif</file>
         <file>res/pic/gray-tank/4-4-1.gif</file>
         <file>res/pic/gray-tank/4-4-2.gif</file>
-    </qresource>
-    <qresource prefix="/pic/other-tank">
         <file>res/pic/other-tank/g4-1-1.gif</file>
         <file>res/pic/other-tank/g4-1-2.gif</file>
         <file>res/pic/other-tank/g4-2-1.gif</file>
@@ -167,16 +160,12 @@
         <file>res/pic/other-tank/y4-3-2.gif</file>
         <file>res/pic/other-tank/y4-4-1.gif</file>
         <file>res/pic/other-tank/y4-4-2.gif</file>
-    </qresource>
-    <qresource prefix="/pic/prop">
         <file>res/pic/prop/p0.gif</file>
         <file>res/pic/prop/p1.gif</file>
         <file>res/pic/prop/p2.gif</file>
         <file>res/pic/prop/p3.gif</file>
         <file>res/pic/prop/p4.gif</file>
         <file>res/pic/prop/p5.gif</file>
-    </qresource>
-    <qresource prefix="/pic/red-tank">
         <file>res/pic/red-tank/1-1-1.gif</file>
         <file>res/pic/red-tank/1-1-2.gif</file>
         <file>res/pic/red-tank/1-2-1.gif</file>
@@ -209,19 +198,6 @@
         <file>res/pic/red-tank/4-3-2.gif</file>
         <file>res/pic/red-tank/4-4-1.gif</file>
         <file>res/pic/red-tank/4-4-2.gif</file>
-    </qresource>
-    <qresource prefix="/pic/scorepanel">
-        <file>res/pic/scorepanel/background.gif</file>
-        <file>res/pic/scorepanel/bunds.gif</file>
-        <file>res/pic/scorepanel/player-0.gif</file>
-        <file>res/pic/scorepanel/player-1.gif</file>
-        <file>res/pic/scorepanel/pts-0.gif</file>
-        <file>res/pic/scorepanel/pts-1.gif</file>
-    </qresource>
-    <qresource prefix="/data">
-        <file>res/data/map.dat</file>
-    </qresource>
-    <qresource prefix="/sound">
         <file>res/sound/addlife.wav</file>
         <file>res/sound/bin.wav</file>
         <file>res/sound/bk_sound.wav</file>
