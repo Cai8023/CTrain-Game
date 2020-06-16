@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include <config.h>
 #include <QIcon>
+#include <QKeyEvent>
+#include<QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -25,4 +27,17 @@ void MainWindow::initGame()
 void MainWindow::paintEvent(QPaintEvent *)
 {
 
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
+    {
+        move();
+    }
+}
+
+void MainWindow::move()
+{
+    qDebug() << "xiang";
 }
