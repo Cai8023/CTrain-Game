@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/data/map.dat</file>
-        <file>res/pic/1P.gif</file>
         <file>res/pic/2P.gif</file>
         <file>res/pic/100.gif</file>
         <file>res/pic/200.gif</file>
@@ -198,6 +196,12 @@
         <file>res/pic/red-tank/4-3-2.gif</file>
         <file>res/pic/red-tank/4-4-1.gif</file>
         <file>res/pic/red-tank/4-4-2.gif</file>
+        <file>res/pic/scorepanel/background.gif</file>
+        <file>res/pic/scorepanel/bunds.gif</file>
+        <file>res/pic/scorepanel/player-0.gif</file>
+        <file>res/pic/scorepanel/player-1.gif</file>
+        <file>res/pic/scorepanel/pts-0.gif</file>
+        <file>res/pic/scorepanel/pts-1.gif</file>
         <file>res/sound/addlife.wav</file>
         <file>res/sound/bin.wav</file>
         <file>res/sound/bk_sound.wav</file>
