@@ -24,5 +24,5 @@ void MainWindow::initGame()
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
-
+    //渲染
 }

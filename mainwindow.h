@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QPixmap>
+#include <QPainter>
 
 class MainWindow : public QMainWindow
 {
@@ -14,10 +15,11 @@ public:
 
     // 游戏初始化
     void initGame();
-    //
+    // 渲染
+    void paintEvent(QPaintEvent *) override;
 
 public:
-    QPixmap bullet_map\bullete_X
+
 
 };
 
