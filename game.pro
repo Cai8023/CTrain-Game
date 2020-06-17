@@ -31,8 +31,7 @@ SOURCES += \
     bullet.cpp \
     enemy.cpp \
     tankbase.cpp \
-    config.cpp\
-    main.cpp
+    config.cpp
 
 HEADERS += \
     config.h \
@@ -40,8 +39,7 @@ HEADERS += \
     player.h \
     bullet.h \
     enemy.h \
-    tankbase.h\
-    main.h
+    tankbase.h
 
 
 # Default rules for deployment.
