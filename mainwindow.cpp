@@ -310,12 +310,42 @@ void MainWindow::play()
 
 void MainWindow::enemyMove()
 {
-
+//        //敌方坦克移动
+//        static int d;
+//        srand((unsigned)time(NULL));
+//        for (auto& enemy:enemies)//使用引用类型 ，不然不是同一个对象
+//        {
+//            //随机方向移动
+//            d = rand()%4;
+//            if(d==0)
+//            {
+//                enemy.setDir(direct::left);
+//            }
+//            else if(d == 1)
+//            {
+//                enemy.setDir(direct::up);
+//            }
+//            else if(d == 2)
+//            {
+//                enemy.setDir(direct::right);
+//            }
+//            else if(d == 3)
+//            {
+//                enemy.setDir(direct::down);
+//            }
+//            enemy.move();
+//        }
 }
 
 void MainWindow::enemyShot()
 {
-
+//    for(auto& enemy: enemies)
+//    {
+//        if(!enemy.bullet.getActive())
+//        {
+//            enemy.shot();
+//        }
+//    }
 }
 
 void MainWindow::bulletMove()
