@@ -73,7 +73,7 @@ public:
 
 
     // 制造敌人---------------------未填写代码， 负责 Enemy 的同学进去完成填写
-    void creatEneymy();
+    void createEnemy();
     // 制造玩家----------------------- 未填写代码，负责 player 的同学来补充此部分代码
     void createPlayer();
 

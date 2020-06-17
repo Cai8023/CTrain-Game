@@ -86,24 +86,21 @@ void MainWindow::initReady()
     // 播放音乐 —— 开始
     QSound::play(SOUND_START);
 
-    /*
-     *   创建、调用 敌人 部分代码
+    // 创建、调用 敌人 部分代码
     cursor=0;
-    enemyNum = 20;
+    enemy_num = 20;
     for(int i=0;i<4;i++)
     {
         createEnemy();
     }
-     */
 
-    /*
-     *   创建、调用 玩家 部分代码
+    // 创建、调用 玩家 部分代码
     createPlayer();
-    life = 3;
-     */
+    player_life = 3;
 
     // 开始游戏，设置开始界面为30次渐变
     start = 30;
+
     // 启动定时器
 //    timer_play->start(TIMER_PLAY);
 //    timer_enemyShot->start(TIMER_ENEMYSHOT);
@@ -118,7 +115,6 @@ void MainWindow::loadMap()
     std::ifstream file;
     try
     {
-//        file.open((QCoreApplication::applicationDirPath()+"/res/data/map.dat").toStdString().c_str(),std::ios::in|std::ios::binary);
         file.open((QCoreApplication::applicationDirPath()+"\\map.dat").toStdString().c_str(),std::ios::in|std::ios::binary);
         if(!file)
         {
@@ -337,14 +333,24 @@ void MainWindow::refresh()
     update();
 }
 
-void MainWindow::creatEneymy()
+void MainWindow::createEnemy()
 {
+//    if(enemy_num<4)
+//        return;
+//    Enemy enemy;
+//    enemy.rect.setRect(cursor*GAME_SIZE,0,GAME_SIZE,GAME_SIZE);
+//    enemies.push_back(enemy);
+//    cursor+=6;
+//    cursor%=18;
 
 }
 
 void MainWindow::createPlayer()
 {
-
+//    player.bullet.setActive(false);
+//    player.setDir(direct::up);
+//    player.ismove=false;
+//    player.rect.setRect(9*GAME_BASESIZE,24*GAME_BASESIZE,GAME_SIZE,GAME_SIZE);
 }
 
 
