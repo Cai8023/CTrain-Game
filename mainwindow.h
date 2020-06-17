@@ -3,13 +3,7 @@
 
 #include <QMainWindow>
 #include <QPixmap>
-<<<<<<< HEAD
-#include <QKeyEvent>
-=======
 #include <QPainter>
-<<<<<<< HEAD
->>>>>>> 2cc748bf9f3b19b34e7289fdffd6dda7dfa32f53
-=======
 #include <QRect>
 #include <QCoreApplication>
 #include <QMessageBox>
@@ -37,14 +31,6 @@ public:
     void initReady();
     // 渲染 -----------------------框架已经分好，大家来自行填充即可
     void paintEvent(QPaintEvent *) override;
-<<<<<<< HEAD
-<<<<<<< HEAD
-public:
-    void keyPressEvent(QKeyEvent *event);
-
-    void move();
-=======
-=======
     // √√√√√√ 加载地图
     void loadMap();
     // √√√√√√ 渲染地图
@@ -82,8 +68,6 @@ public:
     // 重新渲染（刷新）
     void refresh();
 
->>>>>>> 92a5eae361665552e6ec7bd304e0269a23d222bf
-
 public:
     // 地图资源属性
     QPixmap map_grass;
@@ -117,18 +101,13 @@ public:
     // cursor？？？？？？？？？？？？？？？？？？？cursor 是啥？？ Enemy的同学看一下
     int cursor;
 
-
-
-<<<<<<< HEAD
->>>>>>> 2cc748bf9f3b19b34e7289fdffd6dda7dfa32f53
-=======
     // ------------设置定时器--------------
     QTimer* timer_play;
     QTimer* timer_eneymyMove;
     QTimer* timer_enemyShot;
     QTimer* timer_bulletMove;
     QTimer* timer_refresh;
->>>>>>> 92a5eae361665552e6ec7bd304e0269a23d222bf
+
 
 };
 
