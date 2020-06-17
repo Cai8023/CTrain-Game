@@ -1,8 +1,9 @@
 #ifndef ENEMY_H
 #define ENEMY_H
+#include "tankbase.h"
+#include "config.h"
 
-
-class Enemy
+class Enemy : public TankBase
 {
 public:
     Enemy();

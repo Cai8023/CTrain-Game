@@ -1,8 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "tankbase.h"
 
-
-class Player
+class Player: public TankBase
 {
 public:
     Player();
