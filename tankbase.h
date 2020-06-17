@@ -14,11 +14,11 @@ public:
     //发射子弹
     void shot();
     //玩家坦克的移动变换
-    //virtual void move();
-    //virtual void setDir(direct);
-    //virtual void display(QPainter&,bool);
+    virtual void move();
+    virtual void setDir(direct);
+    virtual void display(QPainter&,bool state);
     //玩家坦克移动碰撞和到达范围
-    bool canReachable(int,int,direct);
+    bool canReachable(int x,int y,direct dir);
 
 public:
     //坦克资源属性
