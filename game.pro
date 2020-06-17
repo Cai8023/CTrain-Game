@@ -25,18 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-<<<<<<< HEAD
-        mainwindow.cpp \
-    player.cpp \
-    play.cpp
-
-HEADERS += \
-        mainwindow.h \
-    config.h \
-    player.h \
-    play.h
-=======
     mainwindow.cpp \
     player.cpp \
     bullet.cpp \
@@ -51,7 +39,6 @@ HEADERS += \
     bullet.h \
     enemy.h \
     tankbase.h
->>>>>>> 92a5eae361665552e6ec7bd304e0269a23d222bf
 
 
 # Default rules for deployment.

@@ -15,7 +15,6 @@
 #include <QList>
 #include "player.h"
 #include "enemy.h"
->>>>>>> 92a5eae361665552e6ec7bd304e0269a23d222bf
 
 class MainWindow : public QMainWindow
 {
