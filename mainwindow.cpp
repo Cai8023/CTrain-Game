@@ -1,6 +1,4 @@
 #include "mainwindow.h"
-#include <config.h>
-#include <QIcon>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -26,6 +24,8 @@ void MainWindow::initGame()
     setWindowIcon(QIcon(GAME_ICON));
     // 初始化窗口大小
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
+    // 设置窗口标题
+    setWindowTitle(GAME_TITLE);
     // 设置窗口属性，在退出窗口是自动 delete 自己
     setAttribute(Qt::WA_DeleteOnClose);
     // 设置窗口背景
@@ -335,6 +335,16 @@ void MainWindow::refresh()
 //        nextGate();
 //    }
     update();
+}
+
+void MainWindow::creatEneymy()
+{
+
+}
+
+void MainWindow::createPlayer()
+{
+
 }
 
 

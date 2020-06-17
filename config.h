@@ -4,13 +4,14 @@
 /**********  方法定义数据 **********/
 // 定义方法使图片大小限定
 #define resizePic(p,w,h) p.scaled(w,h,Qt::AspectRatioMode::IgnoreAspectRatio,Qt::TransformationMode::SmoothTransformation)
-enum direct{up,right,down,left};            // 游戏操作四个方向
+enum direct{up, right, down, left};            // 游戏操作四个方向
 extern char MAP[26][27];                    // 游戏界面分为26行26列由二维字符数组map保存地图内容
 
 
 /**********  游戏配置数据  **********/
 #define GAME_RES_PATH "../game/tank.rcc" // 编译目录下的rcc文件
 #define GAME_ICON ":/res/pic/tank.ico"   // 图标文件
+#define GAME_TITLE "坦克大战"             // 窗口标题
 #define GAME_WIDTH 600          // 游戏窗口宽度
 #define GAME_HEIGHT 600         // 游戏窗口高度
 #define GAME_BASESIZE 20        // 矩形起点，12*，24*
