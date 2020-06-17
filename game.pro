@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
+<<<<<<< HEAD
         mainwindow.cpp \
     player.cpp \
     play.cpp
@@ -35,8 +36,23 @@ HEADERS += \
     config.h \
     player.h \
     play.h
+=======
+    mainwindow.cpp \
+    player.cpp \
+    bullet.cpp \
+    enemy.cpp \
+    tankbase.cpp \
+    config.cpp
 
-FORMS +=
+HEADERS += \
+    config.h \
+    mainwindow.h \
+    player.h \
+    bullet.h \
+    enemy.h \
+    tankbase.h
+>>>>>>> 92a5eae361665552e6ec7bd304e0269a23d222bf
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
