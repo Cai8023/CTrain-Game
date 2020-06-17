@@ -11,6 +11,7 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 /**********  游戏配置数据  **********/
 #define GAME_RES_PATH "../game/tank.rcc" // 编译目录下的rcc文件
 #define GAME_ICON ":/res/pic/tank.ico"   // 图标文件
+#define GAME_TITLE "坦克大战"             // 窗口标题
 #define GAME_WIDTH 600          // 游戏窗口宽度
 #define GAME_HEIGHT 600         // 游戏窗口高度
 #define GAME_BASESIZE 20        // 矩形起点，12*，24*
