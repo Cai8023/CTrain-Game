@@ -17,6 +17,8 @@
 #include "enemy.h"
 #include <config.h>
 #include <QIcon>
+#include <QKeyEvent>
+#include <QDebug>
 
 class MainWindow : public QMainWindow
 {
@@ -69,11 +71,11 @@ public:
     // 重新渲染（刷新）
     void refresh();
 
+
     // 制造敌人---------------------未填写代码， 负责 Enemy 的同学进去完成填写
     void creatEneymy();
     // 制造玩家----------------------- 未填写代码，负责 player 的同学来补充此部分代码
     void createPlayer();
-
 
 public:
     // 地图资源属性
@@ -108,14 +110,13 @@ public:
     // cursor？？？？？？？？？？？？？？？？？？？cursor 是啥？？ Enemy的同学看一下
     int cursor;
 
-
-
     // ------------设置定时器--------------
     QTimer* timer_play;
     QTimer* timer_eneymyMove;
     QTimer* timer_enemyShot;
     QTimer* timer_bulletMove;
     QTimer* timer_refresh;
+
 
 };
 
