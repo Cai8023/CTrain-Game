@@ -2,7 +2,8 @@
 #define TANKBASE_H
 #include <QPixmap>
 #include <QPainter>
-#include"config.h"
+#include "config.h"
+#include "bullet.h"
 
 class TankBase
 {
@@ -35,7 +36,7 @@ public:
     direct tank_dir;
 
     //子弹对象
-    //Bullet bullet;
+    Bullet bullet;
 };
 
 #endif // TANKBASE_H

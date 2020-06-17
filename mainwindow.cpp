@@ -204,59 +204,103 @@ void MainWindow::drawStart()
     paint.drawText(12*GAME_BASESIZE+10,13*GAME_BASESIZE+10,"第"+QString::number(gate)+"关");
 }
 
+void MainWindow::keyPressEvent(QKeyEvent * event)
+{
+    if(start>0)
+    {
+        return;
+    }
+    if(event->key()==Qt::Key::Key_W)
+    {
+        player.setDir(direct::up);
+    }
+    else if(event->key()==Qt::Key::Key_S)
+    {
+        player.setDir(direct::down);
+    }
+    else if(event->key()==Qt::Key::Key_A)
+    {
+        player.setDir(direct::left);
+    }
+    else if(event->key()==Qt::Key::Key_D)
+    {
+        player.setDir(direct::right);
+    }
+    else if(event->key()==Qt::Key::Key_J)
+    {
+        if(!player.bullet.getActive())
+        {
+            player.shot();
+            QSound::play(SOUND_SHOOT);
+        }
+    }
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if(event->key()==Qt::Key::Key_J)
+    {
+        return;
+    }
+    else
+    {
+        player.ismove=false;
+    }
+}
+
 void MainWindow::collisionCheck()
 {
-//    //玩家子弹和敌方子弹碰撞检测
-//        for(auto& enemy:enemies)
-//        {
-//            if(true==player.bullet.rect.intersects(enemy.bullet.rect))
-//            {
-//                player.bullet.setActive(false);
-//                enemy.bullet.setActive(false);
-//                break;
-//            }
-//            else if(true==map_campRect.intersects(enemy.bullet.rect)||true==map_campRect.intersects(player.bullet.rect))
-//            {
-//                QSound::play((SOUND_BOOM));
-//                map_camp.load((MAP_CAMPDESTROYED);
-//                map_camp = resizePic(map_camp,GAME_SIZE,GAME_SIZE);
-//                update();
-//                gameOver();
-//            }
-//        }
-//        //玩家子弹和敌方坦克碰撞检测
-//        for(auto enemy=enemies.begin();enemy!=enemies.end();enemy++)
-//        {
-//            if(true==player.bullet.rect.intersects(enemy->rect))
-//            {
-//                QSound::play((SOUND_ENEMYBOOM);
-//                enemies.erase(enemy);//需要重载 == 操作符
-//                enemy_num--;
-//                if(enemy_num<=0)
-//                {
-//                    return;
-//                }
-//                createEnemy();
-//                player.bullet.setActive(false);
-//                break;
-//            }
-//        }
-//        //玩家和敌方子弹碰撞检测
-//        for(auto& enemy:enemies)
-//        {
-//            if(true==player.rect.intersects(enemy.bullet.rect))
-//            {
-//                enemy.bullet.setActive(false);
-//                createPlayer();
-//                QSound::play((SOUND_BOOM);
-//                player_life--;
-//                if(player_life<=0)
-//                {
-//                    gameOver();
-//                }
-//                break;
-//            }
-//        }
+    //玩家子弹和敌方子弹碰撞检测
+        for(auto& enemy:enemies)
+        {
+            if(true==player.bullet.bullet_rect.intersects(enemy.bullet.bullet_rect))
+            {
+                player.bullet.setActive(false);
+                enemy.bullet.setActive(false);
+                break;
+            }
+            else if(true==map_campRect.intersects(enemy.bullet.bullet_rect)||true==map_campRect.intersects(player.bullet.bullet_rect))
+            {
+                QSound::play((SOUND_BOOM));
+                map_camp.load(MAP_CAMPDESTROYED);
+                map_camp = resizePic(map_camp,GAME_SIZE,GAME_SIZE);
+                update();
+                gameOver();
+            }
+        }
+        //玩家子弹和敌方坦克碰撞检测
+        for(auto enemy=enemies.begin();enemy!=enemies.end();enemy++)
+        {
+            if(true==player.bullet.bullet_rect.intersects(enemy->tank_rect))
+            {
+                QSound::play(SOUND_ENEMYBOOM);
+                enemies.erase(enemy); //需要重载 == 操作符
+                enemy_num--;
+                if(enemy_num<=0)
+                {
+                    return;
+                }
+                createEnemy();
+                player.bullet.setActive(false);
+                break;
+            }
+        }
+        //玩家和敌方子弹碰撞检测
+        for(auto& enemy:enemies)
+        {
+            if(true==player.tank_rect.intersects(enemy.bullet.bullet_rect))
+            {
+                enemy.bullet.setActive(false);
+                createPlayer();
+                QSound::play(SOUND_BOOM);
+                player_life--;
+                if(player_life<=0)
+                {
+                    gameOver();
+                }
+                break;
+            }
+        }
 
 }
 
@@ -300,87 +344,99 @@ void MainWindow::gameOver()
 
 void MainWindow::play()
 {
-//    //玩家移动
-//    if(player.ismove)
-//    {
-//        player.move();
-//        QSound::play(SOUND_MOVE);
-    //    }
+    //玩家移动
+    if(player.ismove)
+    {
+        player.move();
+        QSound::play(SOUND_MOVE);
+        }
 }
 
 void MainWindow::enemyMove()
 {
-//        //敌方坦克移动
-//        static int d;
-//        srand((unsigned)time(NULL));
-//        for (auto& enemy:enemies)//使用引用类型 ，不然不是同一个对象
-//        {
-//            //随机方向移动
-//            d = rand()%4;
-//            if(d==0)
-//            {
-//                enemy.setDir(direct::left);
-//            }
-//            else if(d == 1)
-//            {
-//                enemy.setDir(direct::up);
-//            }
-//            else if(d == 2)
-//            {
-//                enemy.setDir(direct::right);
-//            }
-//            else if(d == 3)
-//            {
-//                enemy.setDir(direct::down);
-//            }
-//            enemy.move();
-//        }
+        //敌方坦克移动
+        static int d;
+        srand((unsigned)time(NULL));
+        for (auto& enemy:enemies)//使用引用类型 ，不然不是同一个对象
+        {
+            //随机方向移动
+            d = rand()%4;
+            if(d==0)
+            {
+                enemy.setDir(direct::left);
+            }
+            else if(d == 1)
+            {
+                enemy.setDir(direct::up);
+            }
+            else if(d == 2)
+            {
+                enemy.setDir(direct::right);
+            }
+            else if(d == 3)
+            {
+                enemy.setDir(direct::down);
+            }
+            enemy.move();
+        }
 }
 
 void MainWindow::enemyShot()
 {
-//    for(auto& enemy: enemies)
-//    {
-//        if(!enemy.bullet.getActive())
-//        {
-//            enemy.shot();
-//        }
-//    }
+    for(auto& enemy: enemies)
+    {
+        if(!enemy.bullet.getActive())
+        {
+            enemy.shot();
+        }
+    }
 }
 
 void MainWindow::bulletMove()
 {
-
+    //玩家子弹移动
+    if(player.bullet.getActive())
+    {
+        player.bullet.move();
+    }
+    //敌人子弹移动
+    for(auto& enemy:enemies)
+    {
+        if(enemy.bullet.getActive())
+        {
+            enemy.bullet.move();
+        }
+    }
 }
 
 void MainWindow::refresh()
 {
-//    collisionCheck();
-//    if(enemy_num<=0)
-//    {
-//        nextGate();
-//    }
+    collisionCheck();
+    if(enemy_num<=0)
+    {
+        nextGate();
+    }
     update();
 }
 
 void MainWindow::createEnemy()
 {
-//    if(enemy_num<4)
-//        return;
-//    Enemy enemy;
-//    enemy.rect.setRect(cursor*GAME_SIZE,0,GAME_SIZE,GAME_SIZE);
-//    enemies.push_back(enemy);
-//    cursor+=6;
-//    cursor%=18;
+    if(enemy_num<4)
+        return;
+    Enemy enemy;
+    enemy.tank_rect.setRect(cursor*GAME_SIZE,0,GAME_SIZE,GAME_SIZE);
+    enemies.push_back(enemy);
+    cursor+=6;
+    cursor%=18;
 
 }
 
 void MainWindow::createPlayer()
 {
-//    player.bullet.setActive(false);
-//    player.setDir(direct::up);
-//    player.ismove=false;
-//    player.rect.setRect(9*GAME_BASESIZE,24*GAME_BASESIZE,GAME_SIZE,GAME_SIZE);
+    player.bullet.setActive(false);
+    player.setDir(direct::up);
+    player.ismove=false;
+    player.tank_rect.setRect(9*GAME_BASESIZE,24*GAME_BASESIZE,GAME_SIZE,GAME_SIZE);
 }
 
 
@@ -404,13 +460,32 @@ void MainWindow::paintEvent(QPaintEvent *)
     // 画地图
     drawMap();
 
-    // 画玩家坦克
+//    // 画玩家坦克
+//    static bool state=true;
+//    player.display(paint,state);
+//    state = !state;
+//    // 画玩家子弹
+//    player.bullet.display(paint);
+//    if(player.bullet.bullet_bump)
+//    {
+//        player.bullet.showExplosion(paint);
+//    }
 
-    // 画玩家子弹
 
-    // 画敌人
-        // 画子弹
-        // 画坦克
+//    // 画敌人
+//    for(auto& enemy:enemies)
+//    {
+//        //画子弹
+//        enemy.bullet.display(paint);
+//        if(enemy.bullet.bullet_bump)
+//        {
+//            enemy.bullet.showExplosion(paint);
+//        }
+//        //画坦克
+//        enemy.display(paint,state);
+//    }
+
+
 
     // 重置坐标系统
     paint.restore();

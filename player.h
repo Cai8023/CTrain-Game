@@ -6,6 +6,12 @@ class Player: public TankBase
 {
 public:
     Player();
+
+    bool ismove;
+
+    void initPlayer();
+
+    void setDir(direct) override;
 };
 
 #endif // PLAYER_H

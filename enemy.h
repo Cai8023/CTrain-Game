@@ -7,6 +7,12 @@ class Enemy : public TankBase
 {
 public:
     Enemy();
+
+    void initEnemy();
+
+    bool operator == (const Enemy& other);
+
+    virtual ~Enemy();
 };
 
 #endif // ENEMY_H
