@@ -4,7 +4,7 @@
 /**********  方法定义数据 **********/
 // 定义方法使图片大小限定
 #define resizePic(p,w,h) p.scaled(w,h,Qt::AspectRatioMode::IgnoreAspectRatio,Qt::TransformationMode::SmoothTransformation)
-enum direct{up,right,down,left};            // 游戏操作四个方向
+enum direct{up, right, down, left};            // 游戏操作四个方向
 extern char MAP[26][27];                    // 游戏界面分为26行26列由二维字符数组map保存地图内容
 
 

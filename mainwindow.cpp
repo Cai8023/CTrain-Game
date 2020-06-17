@@ -1,8 +1,4 @@
 #include "mainwindow.h"
-#include <config.h>
-#include <QIcon>
-#include <QKeyEvent>
-#include<QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -339,6 +335,16 @@ void MainWindow::refresh()
 //        nextGate();
 //    }
     update();
+}
+
+void MainWindow::creatEneymy()
+{
+
+}
+
+void MainWindow::createPlayer()
+{
+
 }
 
 
