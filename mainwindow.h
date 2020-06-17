@@ -18,7 +18,7 @@
 #include <config.h>
 #include <QIcon>
 #include <QKeyEvent>
-#include <QDebug>
+//#include <QDebug>
 
 class MainWindow : public QMainWindow
 {
