@@ -379,16 +379,3 @@ void MainWindow::paintEvent(QPaintEvent *)
 
     paint.end();
 }
-
-void MainWindow::keyPressEvent(QKeyEvent *event)
-{
-    if(event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
-    {
-        move();
-    }
-}
-
-void MainWindow::move()
-{
-    qDebug() << "xiang";
-}
