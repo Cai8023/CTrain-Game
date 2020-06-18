@@ -348,7 +348,7 @@ void MainWindow::play()
     if(player.ismove)
     {
         player.move();
-        QSound::play(SOUND_MOVE);
+//        QSound::play(SOUND_MOVE);
         }
 }
 
