@@ -9,9 +9,9 @@ class TankBase
 {
 public:
     TankBase();
-//    TankBase& operator=(const TankBase&);
-//    TankBase(const TankBase&);
-//    ~TankBase();
+    TankBase& operator=(const TankBase&);
+    TankBase(const TankBase&);
+    ~TankBase();
     //发射子弹
     void shot();
     //玩家坦克的移动变换
