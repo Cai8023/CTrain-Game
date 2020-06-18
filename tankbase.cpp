@@ -125,7 +125,7 @@ void TankBase::display(QPainter &, bool state)
 //    }
 }
 
-bool TankBase::canReachable(int x, int y, direct)
+bool TankBase::canReachable(int x, int y, direct dir)
 {
     //转换map坐标
     x /= GAME_BASESIZE;
@@ -133,23 +133,23 @@ bool TankBase::canReachable(int x, int y, direct)
     int x1(0);
     int y1(0);
     //判断坦克方向
-    if(tank_dir==direct::up)
+    if(dir==direct::up)
     {
         x1 = x + 1;
         y1 = y;
     }
-    else if (tank_dir==direct::down)
+    else if (dir==direct::down)
     {
         y += 1;
         y1 = y;
         x1 = x + 1;
     }
-    else if(tank_dir==direct::left)
+    else if(dir==direct::left)
     {
         x1 = x;
         y1 = y+1;
     }
-    else if(tank_dir==direct::right)
+    else if(dir==direct::right)
     {
         x += 1;
         x1 = x;

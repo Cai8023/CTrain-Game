@@ -5,7 +5,7 @@
 #include <QRect>
 #include <QPainter>
 #include <QSound>
-#include <QDebug>
+//#include <QDebug>
 #include <QString>
 
 class Bullet
