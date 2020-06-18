@@ -81,7 +81,7 @@ void TankBase::setDir(direct dir)
 }
 
 //估计要用子弹的部分
-void TankBase::display(QPainter &, bool state)
+void TankBase::display(QPainter &paint, bool state)
 {
     //state两个状态切换实现履带转动效果
     if(state)
@@ -184,10 +184,10 @@ TankBase &TankBase::operator=(const TankBase &other)
     leftimg2=other.leftimg2;
     rightimg1=other.rightimg1;
     rightimg2=other.rightimg2;
-    tank_speed=other.speed;
-    tank_rect=other.rect;
-    tank_dir=other.dir;
-    //bullet = other.bullet;
+    tank_speed=other.tank_speed;
+    tank_rect=other.tank_rect;
+    tank_dir=other.tank_dir;
+    bullet = other.bullet;
     return *this;
 }
 

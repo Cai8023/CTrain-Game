@@ -102,10 +102,10 @@ void MainWindow::initReady()
     start = 30;
 
     // 启动定时器
-//    timer_play->start(TIMER_PLAY);
-//    timer_enemyShot->start(TIMER_ENEMYSHOT);
-//    timer_eneymyMove->start(TIMER_ENEMYMOVE);
-//    timer_bulletMove->start(TIMER_BULLETMOVE);
+    timer_play->start(TIMER_PLAY);
+    timer_enemyShot->start(TIMER_ENEMYSHOT);
+    timer_eneymyMove->start(TIMER_ENEMYMOVE);
+    timer_bulletMove->start(TIMER_BULLETMOVE);
     timer_refresh->start(TIMER_REFRESH);
 }
 
@@ -253,13 +253,13 @@ void MainWindow::collisionCheck()
     //玩家子弹和敌方子弹碰撞检测
         for(auto& enemy:enemies)
         {
-            if(true==player.bullet.bullet_rect.intersects(enemy.bullet.bullet_rect))
+            if(true==player.bullet.rect.intersects(enemy.bullet.rect))
             {
                 player.bullet.setActive(false);
                 enemy.bullet.setActive(false);
                 break;
             }
-            else if(true==map_campRect.intersects(enemy.bullet.bullet_rect)||true==map_campRect.intersects(player.bullet.bullet_rect))
+            else if(true==map_campRect.intersects(enemy.bullet.rect)||true==map_campRect.intersects(player.bullet.rect))
             {
                 QSound::play((SOUND_BOOM));
                 map_camp.load(MAP_CAMPDESTROYED);
@@ -271,7 +271,7 @@ void MainWindow::collisionCheck()
         //玩家子弹和敌方坦克碰撞检测
         for(auto enemy=enemies.begin();enemy!=enemies.end();enemy++)
         {
-            if(true==player.bullet.bullet_rect.intersects(enemy->tank_rect))
+            if(true==player.bullet.rect.intersects(enemy->tank_rect))
             {
                 QSound::play(SOUND_ENEMYBOOM);
                 enemies.erase(enemy); //需要重载 == 操作符
@@ -288,7 +288,7 @@ void MainWindow::collisionCheck()
         //玩家和敌方子弹碰撞检测
         for(auto& enemy:enemies)
         {
-            if(true==player.tank_rect.intersects(enemy.bullet.bullet_rect))
+            if(true==player.tank_rect.intersects(enemy.bullet.rect))
             {
                 enemy.bullet.setActive(false);
                 createPlayer();
@@ -461,29 +461,29 @@ void MainWindow::paintEvent(QPaintEvent *)
     drawMap();
 
 //    // 画玩家坦克
-//    static bool state=true;
-//    player.display(paint,state);
-//    state = !state;
-//    // 画玩家子弹
-//    player.bullet.display(paint);
-//    if(player.bullet.bullet_bump)
-//    {
-//        player.bullet.showExplosion(paint);
-//    }
+    static bool state=true;
+    player.display(paint,state);
+    state = !state;
+    // 画玩家子弹
+    player.bullet.display(paint);
+    if(player.bullet.bump)
+    {
+        player.bullet.showExplosion(paint);
+    }
 
 
 //    // 画敌人
-//    for(auto& enemy:enemies)
-//    {
-//        //画子弹
-//        enemy.bullet.display(paint);
-//        if(enemy.bullet.bullet_bump)
-//        {
-//            enemy.bullet.showExplosion(paint);
-//        }
-//        //画坦克
-//        enemy.display(paint,state);
-//    }
+    for(auto& enemy:enemies)
+    {
+        //画子弹
+        enemy.bullet.display(paint);
+        if(enemy.bullet.bump)
+        {
+            enemy.bullet.showExplosion(paint);
+        }
+        //画坦克
+        enemy.display(paint,state);
+    }
 
 
 
