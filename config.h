@@ -39,7 +39,12 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define SOUND_MOVE ":/res/sound/move.wav"       // 音乐 —— 玩家移动
 #define SOUND_BOOM ":/res/sound/player_bomb.wav"// 音乐 —— 玩家死亡或者大本营被摧毁
 #define SOUND_ENEMYBOOM ":/res/sound/enemy-bomb.wav"    // 音乐 —— 敌军被摧毁
+<<<<<<< HEAD
 #define SOUND_BULLET_HIT_STEEL ":/res/sound/bin.wav"    //音乐 —— 子弹打到钢板
+=======
+#define SOUND_SHOOT ":/res/sound/shoot.wav"
+
+>>>>>>> 872a075d4a35610ff09cf62b9449aab8c8370228
 
 /**********  子弹配置数据 **********/
 #define BULLET_UP_PATH ":/res/pic/bullet-1.gif"     //子弹上下左右图片路径
@@ -49,6 +54,28 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define BULLET_BOMB3_PATH ":/res/pic/bump3.gif"     //子弹爆炸图片
 //#define BULLET_BOMB_PATH ":/res/pic/bump%1.gif"     //爆炸子弹图片路径
 //#define BULLET_BOMB_NUM 3                           //爆炸的图片有三张
+
+/**********  敌人配置数据 **********/
+#define ENEMY_SPEED 20
+#define ENEMY_UP1 ":/res/pic/gray-tank/1-2-1.gif"
+#define ENEMY_UP2 ":/res/pic/gray-tank/1-2-2.gif"
+#define ENEMY_LEFT1 ":/res/pic/gray-tank/1-1-1.gif"
+#define ENEMY_LEFT2 ":/res/pic/gray-tank/1-1-2.gif"
+#define ENEMY_RIGHT1 ":/res/pic/gray-tank/1-3-1.gif"
+#define ENEMY_RIGHT2 ":/res/pic/gray-tank/1-3-2.gif"
+#define ENEMY_DOWN1 ":/res/pic/gray-tank/1-4-1.gif"
+#define ENEMY_DOWN2 ":/res/pic/gray-tank/1-4-2.gif"
+
+/**********  玩家配置数据 **********/
+#define PLAYER_SPEED 20
+#define PLAYER_UP1      ":/res/pic/0player/m0-1-1.gif"
+#define PLAYER_UP2      ":/res/pic/0player/m0-1-2.gif"
+#define PLAYER_LEFT1    ":/res/pic/0player/m0-0-1.gif"
+#define PLAYER_LEFT2    ":/res/pic/0player/m0-0-2.gif"
+#define PLAYER_RIGHT1   ":/res/pic/0player/m0-2-1.gif"
+#define PLAYER_RIGHT2   ":/res/pic/0player/m0-2-2.gif"
+#define PLAYER_DOWN1    ":/res/pic/0player/m0-3-1.gif"
+#define PLAYER_DOWN2    ":/res/pic/0player/m0-3-2.gif"
 
 
 #endif // CONFIG_H

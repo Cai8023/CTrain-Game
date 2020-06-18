@@ -50,81 +50,82 @@ void TankBase::shot()
 //坦克移动
 void TankBase::move()
 {
-    int x = rect.x();
-    int y = rect.y();
-    if(dir == direct::up)
+    int x = tank_rect.x();
+    int y = tank_rect.y();
+    if(tank_dir == direct::up)
     {
-        y -= speed;
+        y -= tank_speed;
     }
-    else if(dir == direct::down)
+    else if(tank_dir == direct::down)
     {
-        y += speed;
+        y += tank_speed;
     }
-    else if(dir == direct::left)
+    else if(tank_dir == direct::left)
     {
-        x -= speed;
+        x -= tank_speed;
     }
-    else if(dir == direct::right)
+    else if(tank_dir == direct::right)
     {
-        x += speed;
+        x += tank_speed;
     }
-    if(canReachable(x,y,this->dir))
+    if(canReachable(x,y,this->tank_dir))
     {
-        rect.moveTo(x,y);
+        tank_rect.moveTo(x,y);
         //qDebug()<<"move"<<rect.x()<<" "<<rect.y();
     }
 }
 
-void TankBase::setDir(direct)
+void TankBase::setDir(direct dir)
 {
-    this->dir=dir;
+    this->tank_dir=dir;
 }
 
+//估计要用子弹的部分
 void TankBase::display(QPainter &, bool state)
 {
 //    //state两个状态切换实现履带转动效果
 //    if(state)
 //    {
-//        if(dir==direct::up)
+//        if(tank_dir==direct::up)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),upimg1);
+//             paint.drawPixmap(tank_rect.x(),tank_rect.y(),upimg1);
 //        }
-//        else if(dir==direct::down)
+//        else if(tank_dir==direct::down)
 //        {
 
-//            paint.drawPixmap(rect.x(),rect.y(),downimg1);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),downimg1);
 //        }
-//        else if(dir==direct::left)
+//        else if(tank_dir==direct::left)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),leftimg1);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),leftimg1);
 //        }
-//        else if(dir==direct::right)
+//        else if(tank_dir==direct::right)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),rightimg1);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),rightimg1);
 //        }
 //    }
 //    else
 //    {
-//        if(dir==direct::up)
+//        if(tank_dir==direct::up)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),upimg2);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),upimg2);
 //        }
-//        else if(dir==direct::down)
+//        else if(tank_dir==direct::down)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),downimg2);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),downimg2);
 //        }
-//        else if(dir==direct::left)
+//        else if(tank_dir==direct::left)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),leftimg2);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),leftimg2);
 //        }
-//        else if(dir==direct::right)
+//        else if(tank_dir==direct::right)
 //        {
-//            paint.drawPixmap(rect.x(),rect.y(),rightimg2);
+//            paint.drawPixmap(tank_rect.x(),tank_rect.y(),rightimg2);
 //        }
 //    }
 }
 
-bool TankBase::canReachable(int x, int y, direct dir)
+bool TankBase::canReachable(int x, int y, direct)
 {
     //转换map坐标
     x /= GAME_BASESIZE;
@@ -132,23 +133,23 @@ bool TankBase::canReachable(int x, int y, direct dir)
     int x1(0);
     int y1(0);
     //判断坦克方向
-    if(dir==direct::up)
+    if(tank_dir==direct::up)
     {
         x1 = x + 1;
         y1 = y;
     }
-    else if (dir==direct::down)
+    else if (tank_dir==direct::down)
     {
         y += 1;
         y1 = y;
         x1 = x + 1;
     }
-    else if(dir==direct::left)
+    else if(tank_dir==direct::left)
     {
         x1 = x;
         y1 = y+1;
     }
-    else if(dir==direct::right)
+    else if(tank_dir==direct::right)
     {
         x += 1;
         x1 = x;
@@ -161,15 +162,15 @@ bool TankBase::canReachable(int x, int y, direct dir)
         return false;
     }
     //判断是否有障碍物
-//    else if(map[y][x]<='2'&&map[y1][x1]<='2')//注意行和列与x,y的关系
-//    {
-//        return true;
-//    }
-//    else
-//    {
-//        //qDebug()<<"障碍";
-//        return false;
-//    }
+    else if(MAP[y][x]<='2'&&MAP[y1][x1]<='2')//注意行和列与x,y的关系
+    {
+        return true;
+    }
+    else
+    {
+        //qDebug()<<"障碍";
+        return false;
+    }
 }
 
 //TankBase &TankBase::operator=(const TankBase &other)

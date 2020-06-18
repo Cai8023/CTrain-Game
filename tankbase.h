@@ -2,7 +2,8 @@
 #define TANKBASE_H
 #include <QPixmap>
 #include <QPainter>
-#include"config.h"
+#include "config.h"
+#include "bullet.h"
 
 class TankBase
 {
@@ -15,10 +16,10 @@ public:
     void shot();
     //玩家坦克的移动变换
     virtual void move();
-    virtual void setDir(direct);
+    virtual void setDir(direct dir);
     virtual void display(QPainter&,bool state);
     //玩家坦克移动碰撞和到达范围
-    bool canReachable(int x,int y,direct dir);
+    bool canReachable(int x,int y,direct);
 
 public:
     //坦克资源属性
@@ -30,12 +31,12 @@ public:
     QPixmap leftimg2;
     QPixmap rightimg1;
     QPixmap rightimg2;
-    int speed;
-    QRect rect;
-    direct dir;
+    int tank_speed;
+    QRect tank_rect;
+    direct tank_dir;
 
     //子弹对象
-    //Bullet bullet;
+    Bullet bullet;
 };
 
 #endif // TANKBASE_H

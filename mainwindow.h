@@ -32,7 +32,7 @@ public:
     void initGame();
     // √√√√√√ 游戏准备
     void initReady();
-    // 渲染 -----------------------框架已经分好，大家来自行填充即可
+    // 渲染
     void paintEvent(QPaintEvent *) override;
     // √√√√√√ 加载地图
     void loadMap();
@@ -45,12 +45,11 @@ public:
     // √√√√√√ 渲染游戏过渡的开始界面
     void drawStart();
 
-    // 按键部分代码 ----------------------- 负责 控制player移动 的同学来补充此部分代码
-//    void keyPressEvent(QKeyEvent *) override;
-//    void keyReleaseEvent(QKeyEvent *event) override;
+    // √√√√√√ 按键部分代码
+    void keyPressEvent(QKeyEvent *) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
 
-    // 碰撞检测 -------------------------负责 player 部分的同学进去完成 player的rect和bullet属性的修改
-    // 碰撞检测 -------------------------负责 bullet 部分的同学进去完成 rect 属性的修改
+    // 碰撞检测
     void collisionCheck();
 
     // √√√√√√ 下一关
@@ -60,21 +59,21 @@ public:
     void gameOver();
 
     // 定时器连接到的函数
-    // 开始游戏 ------------ 负责 player 的同学来这里补充 ismove
+    // 开始游戏
     void play();
-    // 敌人移动 ---------------------未填写代码， 负责 Enemy 的同学进去完成填写
+    // 敌人移动
     void enemyMove();
-    // 敌人射击 ---------------------未填写代码，负责 Enemy 的同学进去完成填写
+    // 敌人射击
     void enemyShot();
-    // 子弹移动 ---------------------未填写代码，负责 Bullet 的同学进去完成填写
+    // 子弹移动
     void bulletMove();
     // 重新渲染（刷新）
     void refresh();
 
 
-    // 制造敌人---------------------未填写代码， 负责 Enemy 的同学进去完成填写
+    // 制造敌人
     void createEnemy();
-    // 制造玩家----------------------- 未填写代码，负责 player 的同学来补充此部分代码
+    // 制造玩家
     void createPlayer();
 
 public:
