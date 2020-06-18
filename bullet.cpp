@@ -6,7 +6,7 @@ Bullet::Bullet()
     h = 12;
     w = 8;
     //子弹速度，是否发射，是否碰撞
-    speed = TIMER_BULLETMOVE;
+    speed = BULLET_SPEED;
     active = false;
     bump = false;
 
