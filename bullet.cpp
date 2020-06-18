@@ -6,7 +6,7 @@ Bullet::Bullet()
     h = 12;
     w = 8;
     //子弹速度，是否发射，是否碰撞
-    speed = BULLET_SPEED;
+    speed = BULLET_SPEED*2 / 3;
     active = false;
     bump = false;
 
@@ -159,14 +159,14 @@ bool Bullet::canReachable(int x, int y, direct dir)
     else if(dir == direct::down)
     {
         y1 = y;
-        x1 = x+1;
+        x1 = x + 1;
     }
     else if(dir == direct::left)
     {
         x1 = x;
-        y1 = y+1;
+        y1 = y +  1;
     }
-    else if(dir == direct::down)
+    else if(dir == direct::right)
     {
         x1 = x;
         y1 = y + 1;
