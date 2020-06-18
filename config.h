@@ -39,15 +39,16 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define SOUND_MOVE ":/res/sound/move.wav"       // 音乐 —— 玩家移动
 #define SOUND_BOOM ":/res/sound/player_bomb.wav"// 音乐 —— 玩家死亡或者大本营被摧毁
 #define SOUND_ENEMYBOOM ":/res/sound/enemy-bomb.wav"    // 音乐 —— 敌军被摧毁
-
+#define SOUND_BULLET_HIT_STEEL ":/res/sound/bin.wav"    //音乐 —— 子弹打到钢板
 
 /**********  子弹配置数据 **********/
-#define BULLET_UP_PATH ":/res/pic/bullet-1.gif"
+#define BULLET_UP_PATH ":/res/pic/bullet-1.gif"     //子弹上下左右图片路径
 #define BULLET_DOWN_PATH ":/res/pic/bullet-3.gif"
 #define BULLET_LEFT_PATH ":/res/pic/bullet-0.gif"
 #define BULLET_RIGHT_PATH ":/res/pic/bullet-2.gif"
-#define BULLET_BOMB_PATH ":/res/pic/bump%1.gif"
-#define BULLET_BOMB_NUM 3
+#define BULLET_BOMB3_PATH ":/res/pic/bump3.gif"     //子弹爆炸图片
+//#define BULLET_BOMB_PATH ":/res/pic/bump%1.gif"     //爆炸子弹图片路径
+//#define BULLET_BOMB_NUM 3                           //爆炸的图片有三张
 
 
 #endif // CONFIG_H
