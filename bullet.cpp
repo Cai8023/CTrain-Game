@@ -235,6 +235,7 @@ void Bullet::showExplosion(QPainter &paint)
 //            paint.drawPixmap(bumpx,bumpy,m_bombs[i].m_pixArr[m_bombs[i].m_index]);
 
 //    }
+      bump = false;
       paint.drawPixmap(bumpx,bumpy,bump3);
 }
 
