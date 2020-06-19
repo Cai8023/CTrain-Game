@@ -478,10 +478,12 @@ void MainWindow::paintEvent(QPaintEvent *)
     if(player.bullet.bump)
     {
         player.bullet.showExplosion(paint);
+        player.bullet.bump=false;
 //        if(bomb_recorder >= BOMB_INTERVAL){
 //            player.bullet.showExplosionFade(paint);
 //            bomb_flag = true;
 //        }
+
     }
 
 
@@ -493,6 +495,7 @@ void MainWindow::paintEvent(QPaintEvent *)
         if(enemy.bullet.bump)
         {
             enemy.bullet.showExplosion(paint);
+            enemy.bullet.bump=false;
 //            if(bomb_recorder >= BOMB_INTERVAL){
 //                player.bullet.showExplosionFade(paint);
 //                bomb_flag = true;
