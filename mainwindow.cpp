@@ -191,7 +191,9 @@ void MainWindow::drawPanel()
 {
     // 绘制游戏分数板
     paint.drawText(6*GAME_SIZE,GAME_BASESIZE,"第"+QString::number(gate)+"关，敌人数量："+QString::number(enemy_num));
-    paint.drawText(7*GAME_SIZE,29*GAME_BASESIZE,"生命"+QString::number(player_life));
+    paint.drawText(6*GAME_SIZE,29*GAME_BASESIZE,"生命"+QString::number(player_life));
+    paint.drawText(8*GAME_SIZE,29*GAME_BASESIZE,"WASD控制移动，J发射子弹");
+
 }
 
 void MainWindow::drawStart()

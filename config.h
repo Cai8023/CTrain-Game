@@ -18,7 +18,7 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define GAME_SIZE 40            // 图形的标准尺寸
 
 /**********  游戏_定时器_配置数据  **********/
-#define TIMER_REFRESH 10         // 游戏帧率，50帧
+#define TIMER_REFRESH 20         // 游戏帧率，50帧
 #define TIMER_PLAY 100           // play 函数计时器
 #define TIMER_ENEMYMOVE 5       // 敌机移动时间间隔
 #define TIMER_ENEMYSHOT 800     // 敌军发射子弹时间间隔
@@ -48,6 +48,8 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define BULLET_LEFT_PATH ":/res/pic/bullet-0.gif"
 #define BULLET_RIGHT_PATH ":/res/pic/bullet-2.gif"
 #define BULLET_BOMB3_PATH ":/res/pic/bump3.gif"     //子弹爆炸图片
+#define BULLET_BOMB2_PATH ":/res/pic/bump2.gif"     //子弹爆炸图片
+#define BULLET_BOMB1_PATH ":/res/pic/bump1.gif"     //子弹爆炸图片
 //#define BULLET_BOMB_PATH ":/res/pic/bump%1.gif"     //爆炸子弹图片路径
 //#define BULLET_BOMB_NUM 3                           //爆炸的图片有三张
 #define BULLET_SPEED 10

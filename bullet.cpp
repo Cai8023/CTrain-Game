@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include <QTimer>
 
 Bullet::Bullet()
 {
@@ -29,14 +30,25 @@ Bullet::Bullet()
 //    initBomb();
     bump3.load(BULLET_BOMB3_PATH);
     bump3 = resizePic(bump3, GAME_BASESIZE, GAME_BASESIZE);
+    bump2.load(BULLET_BOMB2_PATH);
+    bump2 = resizePic(bump2, GAME_BASESIZE, GAME_BASESIZE);
+    bump1.load(BULLET_BOMB1_PATH);
+    bump1 = resizePic(bump1, GAME_BASESIZE, GAME_BASESIZE);
 
-    bomb_fade.load(BULLET_FADE_PATH);
-    bomb_fade = resizePic(bomb_fade, GAME_BASESIZE, GAME_BASESIZE);
+//    bomb_fade.load(BULLET_FADE_PATH);
+//    bomb_fade = resizePic(bomb_fade, GAME_BASESIZE, GAME_BASESIZE);
+
+//    bomb_flag = false;
 //    for(int i = 1;i <= BULLET_BOMB_NUM; i++)
 //    {
 //        QString str = QString (BULLET_BOMB_PATH).arg(i);
 //        bulletPixAir.push_back(QPixmap(str));
 //    }
+    //
+    // 设置定时器
+//     timer_move.setInterval(BOMB_INTERVAL);
+
+
 
 
 }
@@ -235,17 +247,33 @@ void Bullet::showExplosion(QPainter &paint)
 {
 //    for(int i = 0; i < BULLET_BOMB_NUM; i++)
 //    {
-
 //            paint.drawPixmap(bumpx,bumpy,m_bombs[i].m_pixArr[m_bombs[i].m_index]);
-
 //    }
     paint.drawPixmap(bumpx,bumpy,bump3);
+
+
 }
 
-void Bullet::showExplosionFade(QPainter &paint)
-{
-    paint.drawPixmap(bumpx,bumpy,bomb_fade);
-}
+//void Bullet::explosionMove(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bomb_fade);
+//}
+
+//void Bullet::showExplosion2(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bump2);
+//    timer_bump2->start(BOMB_INTERVAL);
+//}
+
+//void Bullet::showExplosion3(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bump1);
+//}
+
+//void Bullet::showExplosionFade(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bomb_fade);
+//}
 
 Bullet::~Bullet()
 {

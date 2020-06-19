@@ -1,5 +1,6 @@
 #ifndef BULLET_H
 #define BULLET_H
+#include <QAction>
 #include "config.h"
 #include <QPixmap>
 #include <QRect>
@@ -8,6 +9,7 @@
 //#include <QDebug>
 #include <QString>
 #include <QVector>
+#include <QTimer>
 
 
 class Bullet
@@ -23,7 +25,10 @@ public:
     Bullet(const Bullet&); //????????????????????????????????????
     Bullet& operator=(const Bullet&);//?????????????????
     void showExplosion(QPainter& paint);//显示爆炸
-    void showExplosionFade(QPainter& paint);
+//    void explosionMove(QPainter &paint);
+//    void showExplosion2(QPainter& paint);
+//    void showExplosion3(QPainter& paint);
+
     ~Bullet();
 
 public:
@@ -57,7 +62,15 @@ public:
 //    QVector<QPixmap> bulletPixAir;
 //    int index;
     QPixmap bump3;
-    QPixmap bomb_fade;
+    QPixmap bump2;
+    QPixmap bump1;
+
+//    QTimer timer_move;
+//    bool bomb_flag;
+//    QTimer *timer_bump2;
+//    QTimer *timer_bump1;
+
+//    QPixmap bomb_fade;
 
 //    Bomb bombs[BOMB_MAX];
 
