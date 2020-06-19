@@ -7,6 +7,8 @@
 #include <QSound>
 //#include <QDebug>
 #include <QString>
+#include <QVector>
+
 
 class Bullet
 {
@@ -20,8 +22,10 @@ public:
     bool canReachable(int, int, direct);//可到达
     Bullet(const Bullet&); //????????????????????????????????????
     Bullet& operator=(const Bullet&);//?????????????????
-    void showExplosion(QPainter&);//显示爆炸
+    void showExplosion(QPainter& paint);//显示爆炸
+    void showExplosionFade(QPainter& paint);
     ~Bullet();
+
 public:
     //子弹图片
     QPixmap upimg;
@@ -53,6 +57,10 @@ public:
 //    QVector<QPixmap> bulletPixAir;
 //    int index;
     QPixmap bump3;
+    QPixmap bomb_fade;
+
+//    Bomb bombs[BOMB_MAX];
+
 
 };
 

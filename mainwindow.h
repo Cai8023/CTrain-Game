@@ -18,7 +18,6 @@
 #include <config.h>
 #include <QIcon>
 #include <QKeyEvent>
-//#include <QDebug>
 
 class MainWindow : public QMainWindow
 {
@@ -109,12 +108,16 @@ public:
     // cursor？？？？？？？？？？？？？？？？？？？cursor 是啥？？ Enemy的同学看一下
     int cursor;
 
+//    int bomb_recorder;
+//    bool bomb_flag;
+
     // ------------设置定时器--------------
     QTimer* timer_play;
     QTimer* timer_eneymyMove;
     QTimer* timer_enemyShot;
     QTimer* timer_bulletMove;
     QTimer* timer_refresh;
+
 
 
 };

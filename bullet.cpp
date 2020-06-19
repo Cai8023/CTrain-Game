@@ -26,8 +26,12 @@ Bullet::Bullet()
     rect.setRect(-1,-1,0,0);
 
     //加载子弹爆炸图片
+//    initBomb();
     bump3.load(BULLET_BOMB3_PATH);
     bump3 = resizePic(bump3, GAME_BASESIZE, GAME_BASESIZE);
+
+    bomb_fade.load(BULLET_FADE_PATH);
+    bomb_fade = resizePic(bomb_fade, GAME_BASESIZE, GAME_BASESIZE);
 //    for(int i = 1;i <= BULLET_BOMB_NUM; i++)
 //    {
 //        QString str = QString (BULLET_BOMB_PATH).arg(i);
@@ -235,13 +239,45 @@ void Bullet::showExplosion(QPainter &paint)
 //            paint.drawPixmap(bumpx,bumpy,m_bombs[i].m_pixArr[m_bombs[i].m_index]);
 
 //    }
-      paint.drawPixmap(bumpx,bumpy,bump3);
+    paint.drawPixmap(bumpx,bumpy,bump3);
+}
+
+void Bullet::showExplosionFade(QPainter &paint)
+{
+    paint.drawPixmap(bumpx,bumpy,bomb_fade);
 }
 
 Bullet::~Bullet()
 {
 
 }
+
+//void Bullet::initBomb()
+//{
+//    for (int i = 0; i <= BOMB_MAX; i++) {
+//        QString str = QString(BOMB_PATH).arg(i);
+//        bombs.push_back(QPixmap(str));
+//    }
+
+//    bomb_index = 0;
+//    bomb_recorder = 0;
+//}
+
+//显示爆炸
+//void Bullet::showExplosion(QPainter &paint)
+//{
+//    // 计算爆炸播放
+//    for( int i = 0; i < BOMB_MAX; i++){
+//        if(bombs[i].m_Free == false){
+//            bombs[i].updateInfo();
+//        }
+//    }
+//    for( int i = 0; i < BOMB_MAX; i++){
+//        if(bombs[i].m_Free == false){
+//            paint.drawPixmap(bumpx ,  bumpy, bombs[i].m_pixArr[i]);
+//        }
+//    }
+//}
 
 
 
