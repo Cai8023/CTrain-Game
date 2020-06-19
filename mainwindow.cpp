@@ -69,6 +69,9 @@ void MainWindow::initGame()
     // 初始化关卡
     gate = 1;
 
+//    bomb_recorder = BOMB_INTERVAL;
+//    bomb_flag = false;
+
     // 调用初始化初始化设置
     initReady();
 
@@ -399,6 +402,7 @@ void MainWindow::bulletMove()
     {
         player.bullet.move();
     }
+
     //敌人子弹移动
     for(auto& enemy:enemies)
     {
@@ -445,6 +449,7 @@ void MainWindow::paintEvent(QPaintEvent *)
     // 开始渲染
     paint.begin(this);
 
+
     // 渲染关下过渡动画
     if( 0 < start-- ){
         // 不断重复渲染
@@ -460,6 +465,8 @@ void MainWindow::paintEvent(QPaintEvent *)
     // 画地图
     drawMap();
 
+//    bomb_recorder ++ ;
+
 //    // 画玩家坦克
     static bool state=true;
     player.display(paint,state);
@@ -470,6 +477,11 @@ void MainWindow::paintEvent(QPaintEvent *)
     {
         player.bullet.showExplosion(paint);
         player.bullet.bump=false;
+//        if(bomb_recorder >= BOMB_INTERVAL){
+//            player.bullet.showExplosionFade(paint);
+//            bomb_flag = true;
+//        }
+
     }
 
 
@@ -482,10 +494,18 @@ void MainWindow::paintEvent(QPaintEvent *)
         {
             enemy.bullet.showExplosion(paint);
             enemy.bullet.bump=false;
+//            if(bomb_recorder >= BOMB_INTERVAL){
+//                player.bullet.showExplosionFade(paint);
+//                bomb_flag = true;
+//            }
         }
         //画坦克
         enemy.display(paint,state);
     }
+
+//    if(bomb_flag){
+//        bomb_recorder = 0;
+//    }
 
 
 
