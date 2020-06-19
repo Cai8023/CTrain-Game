@@ -469,6 +469,7 @@ void MainWindow::paintEvent(QPaintEvent *)
     if(player.bullet.bump)
     {
         player.bullet.showExplosion(paint);
+        player.bullet.bump=false;
     }
 
 
@@ -480,6 +481,7 @@ void MainWindow::paintEvent(QPaintEvent *)
         if(enemy.bullet.bump)
         {
             enemy.bullet.showExplosion(paint);
+            enemy.bullet.bump=false;
         }
         //画坦克
         enemy.display(paint,state);

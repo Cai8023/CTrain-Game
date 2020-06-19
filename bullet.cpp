@@ -106,7 +106,8 @@ void Bullet::move()
     {
         rect.moveTo(x, y);
     }
-    else {
+    else
+    {
         setActive(false);
     }
 }
