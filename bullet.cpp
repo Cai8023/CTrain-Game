@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include <QTimer>
 
 Bullet::Bullet()
 {
@@ -6,7 +7,7 @@ Bullet::Bullet()
     h = 12;
     w = 8;
     //子弹速度，是否发射，是否碰撞
-    speed = BULLET_SPEED*2 / 3;
+    speed = BULLET_SPEED;
     active = false;
     bump = false;
 
@@ -26,13 +27,28 @@ Bullet::Bullet()
     rect.setRect(-1,-1,0,0);
 
     //加载子弹爆炸图片
+//    initBomb();
     bump3.load(BULLET_BOMB3_PATH);
     bump3 = resizePic(bump3, GAME_BASESIZE, GAME_BASESIZE);
+    bump2.load(BULLET_BOMB2_PATH);
+    bump2 = resizePic(bump2, GAME_BASESIZE, GAME_BASESIZE);
+    bump1.load(BULLET_BOMB1_PATH);
+    bump1 = resizePic(bump1, GAME_BASESIZE, GAME_BASESIZE);
+
+//    bomb_fade.load(BULLET_FADE_PATH);
+//    bomb_fade = resizePic(bomb_fade, GAME_BASESIZE, GAME_BASESIZE);
+
+//    bomb_flag = false;
 //    for(int i = 1;i <= BULLET_BOMB_NUM; i++)
 //    {
 //        QString str = QString (BULLET_BOMB_PATH).arg(i);
 //        bulletPixAir.push_back(QPixmap(str));
 //    }
+    //
+    // 设置定时器
+//     timer_move.setInterval(BOMB_INTERVAL);
+
+
 
 
 }
@@ -106,7 +122,8 @@ void Bullet::move()
     {
         rect.moveTo(x, y);
     }
-    else {
+    else
+    {
         setActive(false);
     }
 }
@@ -159,14 +176,14 @@ bool Bullet::canReachable(int x, int y, direct dir)
     else if(dir == direct::down)
     {
         y1 = y;
-        x1 = x + 1;
+        x1 = x+1;
     }
     else if(dir == direct::left)
     {
         x1 = x;
-        y1 = y +  1;
+        y1 = y+1;
     }
-    else if(dir == direct::right)
+    else if(dir == direct::down)
     {
         x1 = x;
         y1 = y + 1;
@@ -231,18 +248,65 @@ void Bullet::showExplosion(QPainter &paint)
 {
 //    for(int i = 0; i < BULLET_BOMB_NUM; i++)
 //    {
-
 //            paint.drawPixmap(bumpx,bumpy,m_bombs[i].m_pixArr[m_bombs[i].m_index]);
-
 //    }
-      bump = false;
-      paint.drawPixmap(bumpx,bumpy,bump3);
+    paint.drawPixmap(bumpx,bumpy,bump3);
+
+
 }
+
+//void Bullet::explosionMove(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bomb_fade);
+//}
+
+//void Bullet::showExplosion2(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bump2);
+//    timer_bump2->start(BOMB_INTERVAL);
+//}
+
+//void Bullet::showExplosion3(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bump1);
+//}
+
+//void Bullet::showExplosionFade(QPainter &paint)
+//{
+//    paint.drawPixmap(bumpx,bumpy,bomb_fade);
+//}
 
 Bullet::~Bullet()
 {
 
 }
+
+//void Bullet::initBomb()
+//{
+//    for (int i = 0; i <= BOMB_MAX; i++) {
+//        QString str = QString(BOMB_PATH).arg(i);
+//        bombs.push_back(QPixmap(str));
+//    }
+
+//    bomb_index = 0;
+//    bomb_recorder = 0;
+//}
+
+//显示爆炸
+//void Bullet::showExplosion(QPainter &paint)
+//{
+//    // 计算爆炸播放
+//    for( int i = 0; i < BOMB_MAX; i++){
+//        if(bombs[i].m_Free == false){
+//            bombs[i].updateInfo();
+//        }
+//    }
+//    for( int i = 0; i < BOMB_MAX; i++){
+//        if(bombs[i].m_Free == false){
+//            paint.drawPixmap(bumpx ,  bumpy, bombs[i].m_pixArr[i]);
+//        }
+//    }
+//}
 
 
 

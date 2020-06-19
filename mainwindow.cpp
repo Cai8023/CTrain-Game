@@ -69,6 +69,9 @@ void MainWindow::initGame()
     // 初始化关卡
     gate = 1;
 
+//    bomb_recorder = BOMB_INTERVAL;
+//    bomb_flag = false;
+
     // 调用初始化初始化设置
     initReady();
 
@@ -188,7 +191,9 @@ void MainWindow::drawPanel()
 {
     // 绘制游戏分数板
     paint.drawText(6*GAME_SIZE,GAME_BASESIZE,"第"+QString::number(gate)+"关，敌人数量："+QString::number(enemy_num));
-    paint.drawText(7*GAME_SIZE,29*GAME_BASESIZE,"生命"+QString::number(player_life));
+    paint.drawText(6*GAME_SIZE,29*GAME_BASESIZE,"生命"+QString::number(player_life));
+    paint.drawText(8*GAME_SIZE,29*GAME_BASESIZE,"WASD控制移动，J发射子弹");
+
 }
 
 void MainWindow::drawStart()
@@ -399,6 +404,7 @@ void MainWindow::bulletMove()
     {
         player.bullet.move();
     }
+
     //敌人子弹移动
     for(auto& enemy:enemies)
     {
@@ -445,6 +451,7 @@ void MainWindow::paintEvent(QPaintEvent *)
     // 开始渲染
     paint.begin(this);
 
+
     // 渲染关下过渡动画
     if( 0 < start-- ){
         // 不断重复渲染
@@ -460,6 +467,8 @@ void MainWindow::paintEvent(QPaintEvent *)
     // 画地图
     drawMap();
 
+//    bomb_recorder ++ ;
+
 //    // 画玩家坦克
     static bool state=true;
     player.display(paint,state);
@@ -469,6 +478,12 @@ void MainWindow::paintEvent(QPaintEvent *)
     if(player.bullet.bump)
     {
         player.bullet.showExplosion(paint);
+        player.bullet.bump=false;
+//        if(bomb_recorder >= BOMB_INTERVAL){
+//            player.bullet.showExplosionFade(paint);
+//            bomb_flag = true;
+//        }
+
     }
 
 
@@ -480,10 +495,19 @@ void MainWindow::paintEvent(QPaintEvent *)
         if(enemy.bullet.bump)
         {
             enemy.bullet.showExplosion(paint);
+            enemy.bullet.bump=false;
+//            if(bomb_recorder >= BOMB_INTERVAL){
+//                player.bullet.showExplosionFade(paint);
+//                bomb_flag = true;
+//            }
         }
         //画坦克
         enemy.display(paint,state);
     }
+
+//    if(bomb_flag){
+//        bomb_recorder = 0;
+//    }
 
 
 
