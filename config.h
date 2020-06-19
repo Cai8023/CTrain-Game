@@ -19,10 +19,10 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 
 /**********  游戏_定时器_配置数据  **********/
 #define TIMER_REFRESH 20         // 游戏帧率，50帧
-#define TIMER_PLAY 100           // play 函数计时器
+#define TIMER_PLAY 50         // play 函数计时器
 #define TIMER_ENEMYMOVE 5       // 敌机移动时间间隔
 #define TIMER_ENEMYSHOT 800     // 敌军发射子弹时间间隔
-#define TIMER_BULLETMOVE 5      // 子弹移动
+#define TIMER_BULLETMOVE 10      // 子弹移动
 
 /**********  地图数据  **********/
 #define MAP_BACKGROUND_GRAY ":/res/pic/bg_gray.gif" // 地图灰色背景
@@ -61,7 +61,7 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define BOMB_INTERVAL 20
 
 /**********  敌人配置数据 **********/
-#define ENEMY_SPEED 20
+#define ENEMY_SPEED 10
 #define ENEMY_UP1 ":/res/pic/gray-tank/1-2-1.gif"
 #define ENEMY_UP2 ":/res/pic/gray-tank/1-2-2.gif"
 #define ENEMY_LEFT1 ":/res/pic/gray-tank/1-1-1.gif"
@@ -72,7 +72,7 @@ extern char MAP[26][27];                    // 游戏界面分为26行26列由�
 #define ENEMY_DOWN2 ":/res/pic/gray-tank/1-4-2.gif"
 
 /**********  玩家配置数据 **********/
-#define PLAYER_SPEED 20
+#define PLAYER_SPEED 5
 #define PLAYER_UP1      ":/res/pic/0Player/m0-1-1.gif"
 #define PLAYER_UP2      ":/res/pic/0Player/m0-1-2.gif"
 #define PLAYER_LEFT1    ":/res/pic/0Player/m0-0-1.gif"
