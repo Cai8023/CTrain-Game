@@ -1,5 +1,4 @@
 #include "tankbase.h"
-//#include<QDebug>
 
 TankBase::TankBase()
 {
@@ -71,7 +70,6 @@ void TankBase::move()
     if(canReachable(x,y,this->tank_dir))
     {
         tank_rect.moveTo(x,y);
-        //qDebug()<<"move"<<rect.x()<<" "<<rect.y();
     }
 }
 
@@ -80,7 +78,7 @@ void TankBase::setDir(direct dir)
     this->tank_dir=dir;
 }
 
-//估计要用子弹的部分
+//打印履带
 void TankBase::display(QPainter &paint, bool state)
 {
     //state两个状态切换实现履带转动效果
@@ -125,6 +123,7 @@ void TankBase::display(QPainter &paint, bool state)
     }
 }
 
+//坦克到达范围
 bool TankBase::canReachable(int x, int y, direct dir)
 {
     //转换map坐标
@@ -158,7 +157,6 @@ bool TankBase::canReachable(int x, int y, direct dir)
     //判断坦克是否越界
     if(x<0 || x1<0 || x>25 || x1>25 || y<0 || y1<0 || y>25 || y1>25)
     {
-        //qDebug()<<"越界"<<x<<" "<<y;
         return false;
     }
     //判断是否有障碍物
@@ -168,11 +166,11 @@ bool TankBase::canReachable(int x, int y, direct dir)
     }
     else
     {
-        //qDebug()<<"障碍";
         return false;
     }
 }
 
+//坦克相关配置函数
 TankBase &TankBase::operator=(const TankBase &other)
 {
     if(this==&other)return *this;
