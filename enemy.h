@@ -8,6 +8,7 @@ class Enemy : public TankBase
 public:
     Enemy();
 
+    // 初始化敌军
     void initEnemy();
 
     bool operator == (const Enemy& other);
