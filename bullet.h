@@ -16,15 +16,30 @@ class Bullet
 {
 public:
     explicit Bullet();
-    void setActive(bool);//设置子弹的状态
-    bool getActive();//获取子弹此时是否发射
-    void move();//移动
-    void setDir(direct);//设置方向
-    void display(QPainter&);//绘制子弹
-    bool canReachable(int, int, direct);//可到达
-    Bullet(const Bullet&); //????????????????????????????????????
-    Bullet& operator=(const Bullet&);//?????????????????
-    void showExplosion(QPainter& paint);//显示爆炸
+    Bullet(const Bullet&);
+    Bullet& operator=(const Bullet&);
+
+    //设置子弹的状态（是否发射）
+    void setActive(bool);
+
+    //获取子弹此时状态（是否发射）
+    bool getActive();
+
+    //子弹移动函数
+    void move();
+
+    //设置子弹方向
+    void setDir(direct);
+
+    //绘制（显示）子弹
+    void display(QPainter&);
+
+    //检测子弹是否可到达该位置
+    bool canReachable(int, int, direct);
+
+    //绘制（显示）爆炸
+    void showExplosion(QPainter& paint);
+
 //    void explosionMove(QPainter &paint);
 //    void showExplosion2(QPainter& paint);
 //    void showExplosion3(QPainter& paint);
